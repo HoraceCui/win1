@@ -45,7 +45,8 @@ jobs:
       # dirPath="C:\Users\runneradmin\AppData\Roaming\code-server\Config\config.yaml"       
       run: |
         echo "code-server start"
-        npm install --global code-server --unsafe-perm
+        npm install --global code-server
+        echo "npm install code-server OK"
         mkdir -p C:\Users\runneradmin\AppData\Roaming\code-server\Config
         touch C:\Users\runneradmin\AppData\Roaming\code-server\Config\config.yaml        
         echo "bind-addr: 127.0.0.1:8080" > C:\Users\runneradmin\AppData\Roaming\code-server\Config\config.yaml
