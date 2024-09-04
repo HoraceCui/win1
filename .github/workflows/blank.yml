@@ -38,7 +38,7 @@ jobs:
 
     - name: code-server
       shell: pwsh # 指定在 Windows 中使用 PowerShell
-      if: true
+      if: flae
       # ~/AppData/Roaming/code-server
       # cat ~/AppData/Roaming/code-server/config.yaml
       # Start-Process -FilePath "code-server.exe" -NoNewWindow
@@ -65,5 +65,12 @@ jobs:
       shell: pwsh # 指定在 Windows 中使用 PowerShell   
       run: |
         echo "sleep start"
-        sleep 20880
+        $startTime = Get-Date
+        $endTime = $startTime.AddHours(1)
+        $path = "C:"
+        while ((Get-Date) -lt $endTime -and (-not (Test-Path "$path\1.txt"))) {
+        # 在这里写您想执行的命令
+          echo "循环还在继续，文件还未出现..."
+          Start-Sleep -Seconds 10
+        }
         echo "sleep end"      
