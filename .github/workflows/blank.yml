@@ -60,7 +60,7 @@ jobs:
         echo "auth: password" >> C:\Users\runneradmin\AppData\Roaming\code-server\Config\config.yaml
         echo "password: ${{ secrets.CODE }}" >> C:\Users\runneradmin\AppData\Roaming\code-server\Config\config.yaml
         echo "cert: false" >> C:\Users\runneradmin\AppData\Roaming\code-server\Config\config.yaml   
-        code-server        
+        code-server 2>> error.txt
         echo "end "
 
     - name: Don't kill instace     
